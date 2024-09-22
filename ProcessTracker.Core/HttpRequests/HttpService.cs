@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using ProcessTracker.Core.Interfaces;
+﻿using ProcessTracker.Core.Interfaces;
 using ProcessTracker.Core.ViewModels;
 using RestSharp;
+using System.Text.Json;
 
 namespace ProcessTracker.Core.HttpRequests
 {
@@ -20,7 +20,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteGetAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return apiResponse.Tags;
                 else
@@ -38,7 +38,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteGetAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return apiResponse.Tags;
                 else
@@ -57,7 +57,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteGetAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return apiResponse.Tag;
             }
@@ -74,7 +74,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteDeleteAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 Console.WriteLine(apiResponse.Message);
             }
             else if (response.StatusCode > 0)
@@ -92,7 +92,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecutePostAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 Console.WriteLine(apiResponse.Message);
             }
             else if (response.StatusCode > 0)
@@ -110,7 +110,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecutePutAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 Console.WriteLine(apiResponse.Message);
             }
             else if (response.StatusCode > 0)
@@ -130,7 +130,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecutePostAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 Console.WriteLine(apiResponse.Message);
             }
             else if (response.StatusCode > 0)
@@ -148,7 +148,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteGetAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return apiResponse.Filters;
                 else
@@ -167,7 +167,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteGetAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return apiResponse.Filters;
                 else
@@ -186,7 +186,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteGetAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return apiResponse.Filter;
             }
@@ -204,7 +204,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteDeleteAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 Console.WriteLine(apiResponse.Message);
             }
             else if (response.StatusCode > 0)
@@ -225,7 +225,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecutePostAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 Console.WriteLine(apiResponse.Message);
             }
             else if (response.StatusCode > 0)
@@ -243,7 +243,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecutePutAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 Console.WriteLine(apiResponse.Message);
             }
             else if (response.StatusCode > 0)
@@ -263,7 +263,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecutePostAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return apiResponse.Report;
                 else
@@ -281,7 +281,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecuteGetAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                     return bool.Parse(apiResponse.SettingValue);
                 else
@@ -300,7 +300,7 @@ namespace ProcessTracker.Core.HttpRequests
             var response = await _restClient.ExecutePutAsync<GenericResponse>(request);
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<GenericResponse>(response.Content);
+                var apiResponse = JsonSerializer.Deserialize<GenericResponse>(response.Content);
                 if (apiResponse.Success)
                 {
                     Console.WriteLine("Tracking " + (pauseTracking ? "paused" : "unpaused") + " successfully.");
