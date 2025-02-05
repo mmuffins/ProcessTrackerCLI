@@ -17,7 +17,7 @@
       inherit system;
 
       packages."${system}" = {
-        process-tracker = pkgs.buildDotnetModule rec {
+        process-tracker-cli = pkgs.buildDotnetModule rec {
           pname = "process-tracker-cli";
           version = "${appVersion}";
 
@@ -45,17 +45,17 @@
         };
       };
 
-      defaultPackage."${system}" = self.packages."${system}".process-tracker;
+      defaultPackage."${system}" = self.packages."${system}".process-tracker-cli;
 
       nixosModules.process-tracker-cli = { config, lib, pkgs, ... }:
         let
           cfg = config.programs.process-tracker-cli;
         in {
-          options.programs.process-tracker = {
+          options.programs.process-tracker-cli = {
             enable = lib.mkEnableOption "Enable the process tracker cli";
             package = lib.mkOption {
               type = lib.types.package;
-              default = self.packages.${system}.process-tracker;
+              default = self.packages.${system}.process-tracker-cli;
               description = "The package to install as the process tracker cli.";
             };
             # Extra service options (if needed)
