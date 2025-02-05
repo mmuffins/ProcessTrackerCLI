@@ -1,10 +1,5 @@
 [
   {
-    "pname": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-    "version": "9.0.1",
-    "hash": "sha256-rfYRuKubMkl8pAiDGbpbYIV3iEoYRB9YWwauYnw7SOE="
-  },
-  {
     "pname": "Microsoft.Extensions.Configuration",
     "version": "9.0.1",
     "hash": "sha256-QKWRIGi8RaZjheuW9gMouXa3oaL/nMwlmg28/xxEvgs="
@@ -88,11 +83,6 @@
     "pname": "Microsoft.Extensions.Primitives",
     "version": "9.0.1",
     "hash": "sha256-tdbtoC7eQGW5yh66FWCJQqmFJkNJD+9e6DDKTs7YAjs="
-  },
-  {
-    "pname": "Microsoft.NETCore.App.Runtime.linux-x64",
-    "version": "9.0.1",
-    "hash": "sha256-MXtq6w3V2a+h4knK7JQR/YJlwfvxmhlG4X1b2+me1qo="
   },
   {
     "pname": "RestSharp",
