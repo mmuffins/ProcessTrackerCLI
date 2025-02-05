@@ -110,3 +110,9 @@ jobs:
       run: gh pr create -B main -H "flake-update-${{ github.run_number }}-${{ github.run_attempt }}" --title 'Update nix flake' --body 'Updated nix flake'
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: create pull request
+      run: gh pr create -B main -H "flake-update-${{ github.run_number }}-${{ github.run_attempt }}" --title 'Update nix flake' --body 'Updated nix flake'
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
