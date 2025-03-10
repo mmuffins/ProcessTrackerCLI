@@ -606,8 +606,13 @@ namespace ProcessTracker.Core.Menus
                 }
             }
 
-            Console.Write("Enter start date (" + _appSettings.DateFormat + ") or press enter to skip: ");
-            string startDateStr = Console.ReadLine();
+            var defaultStartDate = DateTime.Now.AddMonths(-6);
+            Console.Write($"Enter start date ({_appSettings.DateFormat}) or press enter to use default [{defaultStartDate.ToString(_appSettings.DateFormat)}]: ");
+            string input = Console.ReadLine();
+            string startDateStr = string.IsNullOrWhiteSpace(input)
+                ? defaultStartDate.ToString(_appSettings.DateFormat)
+                : input;
+
             if (!string.IsNullOrEmpty(startDateStr))
             {
                 var isValidDate = DateTime.TryParseExact(startDateStr, _appSettings.DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime startDate);
