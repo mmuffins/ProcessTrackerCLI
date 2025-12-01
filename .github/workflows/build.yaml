@@ -36,7 +36,7 @@ jobs:
       build_framework: net9.0
     
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v5
@@ -139,7 +139,7 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
 
     - name: Get win
       uses: actions/download-artifact@v6
