@@ -12,7 +12,7 @@
         inherit system;
       };
       appVersion = "1.0.581";
-      dotnetVersion = "9_0";
+      dotnetVersion = "10_0";
     in {
       inherit system;
 
