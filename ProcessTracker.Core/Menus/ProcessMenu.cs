@@ -418,7 +418,7 @@ namespace ProcessTracker.Core.Menus
                 }
                 else
                 {// sub menu selection
-                    fieldType = ConsoleHelpers.GetSelectionFromStringArray("Select a filter.", new string[] { "Name", "Path", "Description", "Main Window Title", "Exit" });
+                    fieldType = ConsoleHelpers.GetSelectionFromStringArray("Select a filter.", new string[] { "Name", "Path", "CommandLine", "Description", "Main Window Title", "Exit" });
                     // exit when press 5
                     if (fieldType == 5)
                         break;
