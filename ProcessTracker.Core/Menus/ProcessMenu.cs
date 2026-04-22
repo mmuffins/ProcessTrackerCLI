@@ -411,14 +411,14 @@ namespace ProcessTracker.Core.Menus
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     // sub menu selection
-                    fieldType = ConsoleHelpers.GetSelectionFromStringArray("Select a filter.", new string[] { "Name", "Path", "Exit" });
-                    // exit when press 3
-                    if (fieldType == 3)
+                    fieldType = ConsoleHelpers.GetSelectionFromStringArray("Select a filter.", new string[] { "Name", "Path", "CommandLine", "Exit" });
+                    // exit when press 4
+                    if (fieldType == 4)
                         break;
                 }
                 else
                 {// sub menu selection
-                    fieldType = ConsoleHelpers.GetSelectionFromStringArray("Select a filter.", new string[] { "Name", "Path", "Description", "Main Window Title", "Exit" });
+                    fieldType = ConsoleHelpers.GetSelectionFromStringArray("Select a filter.", new string[] { "Name", "Path", "CommandLine", "Description", "Main Window Title", "Exit" });
                     // exit when press 5
                     if (fieldType == 5)
                         break;
