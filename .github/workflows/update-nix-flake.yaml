@@ -1,4 +1,4 @@
-name: update-nix-flake
+name: Update nix flake
 
 on:
   workflow_dispatch:      
