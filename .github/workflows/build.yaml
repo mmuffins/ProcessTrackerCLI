@@ -11,9 +11,7 @@ on:
       - '!flake.lock'
       - '!deps.json'
   pull_request:
-    branches:
-      - '!nix-flake-update/**'
-
+ 
 env:
   version: "1.0.${{ github.run_number }}${{ github.run_attempt }}"
   package_name: ProcessTrackerCLI
@@ -29,6 +27,8 @@ jobs:
           - win-x64
     
     runs-on: ubuntu-latest
+    if: >-
+      !contains(github.event.pull_request.labels.*.name, 'nix-flake-update')
     permissions:
       checks: write
       contents: write
