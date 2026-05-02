@@ -8,7 +8,8 @@ jobs:
   pr-auto-approve:
     runs-on: ubuntu-latest
     if: >-
-      github.event.pull_request.user.login == 'dependabot[bot]'
+      (github.event.pull_request.user.login == 'dependabot[bot]'
+      || github.event.pull_request.user.login == 'github-actions[bot]')
       && github.repository == 'mmuffins/ProcessTrackerCLI'
       && (contains(github.event.pull_request.labels.*.name, 'github_actions')
       || contains(github.event.pull_request.labels.*.name, 'dependencies')
