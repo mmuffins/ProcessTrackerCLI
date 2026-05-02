@@ -1,4 +1,4 @@
-name: PR auto-approve
+name: Auto-merge Nix Flake Upates
 on: pull_request
 
 permissions:
@@ -12,8 +12,8 @@ jobs:
       && github.repository == 'mmuffins/ProcessTrackerCLI'
       && (contains(github.event.pull_request.labels.*.name, 'nix-flake-update'))
     steps:
-      - name: Approve a PR
-        run: gh pr review --approve "$PR_URL"
+      - name: Merge PR
+        run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
