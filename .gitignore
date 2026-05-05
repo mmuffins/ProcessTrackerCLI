@@ -363,5 +363,8 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # nix specific
-result
 nuget-restore
+.direnv
+/result
+output/
+.codex
