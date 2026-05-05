@@ -367,3 +367,4 @@ nuget-restore
 .direnv
 /result
 output/
+.codex
