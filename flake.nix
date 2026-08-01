@@ -11,7 +11,7 @@
       pkgs = import nixpkgs {
         inherit system;
       };
-      appVersion = "1.0.1191";
+      appVersion = "1.0.1231";
       dotnetVersion = "10_0";
     in {
       inherit system;
